@@ -4,10 +4,27 @@ import img2 from "../assets/asset 5.png";
 import img3 from "../assets/asset 6.jpeg";
 import img4 from "../assets/asset 2.png";
 import img5 from "../assets/asset 13.png";
+import img6 from "../assets/asset 10.png";
+import img7 from "../assets/bastian-top-2.jpg";
+import img8 from "../assets/asset 11.png";
+
+
+
 import img10 from "../assets/bastian-empire-2.jpg";
 import img11 from "../assets/bastianempire.jpg";
-import gardenImg from '../assets/garden_main.png'
-import gardenFood from '../assets/garden-food.png'
+import gardenImg from '../assets/garden_main.png';
+import gardenFood from '../assets/garden-food.png';
+import food1 from '../assets/food-1.png';
+import food2 from '../assets/food-2.png';
+import food3 from '../assets/food-3.png';
+import food4 from '../assets/food-4.png';
+import food5 from '../assets/food-5.png';
+import food6 from '../assets/food-6.png';
+import food7 from '../assets/food-7.png';
+import food8 from '../assets/food-8.png';
+import food9 from '../assets/food-9.png';
+
+
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -22,7 +39,8 @@ const About = ({branch}) => {
   const paraRef = useRef(null);
   const mainImgRef = useRef(null);
 
-  const images = [img1, img2, img3, img4, img5];
+  const images = [img1, img2, img3, img4, img5, img6,img7, img8];
+  const subImages = [food1, food2, food3, food4, food5, food6, food7, food8, food9];
   const [index, setIndex] = useState(0);
 
   const animateMainImage = (newImage) => {
@@ -117,7 +135,7 @@ const About = ({branch}) => {
 
           {/* Thumbnails */}
           <div className="image-sub-container" ref={containerRef}>
-            {images.map((img, i) => (
+            {subImages.map((img, i) => (
               <img
                 key={i}
                 src={img}
@@ -232,10 +250,6 @@ const About = ({branch}) => {
                     <h2>Destination for Indulgence</h2>
                     <p>Looking for a fine dine experience in Bangalore that brings together the best food, cocktails & nightlife? Housed in a luxurious Bengaluru bungalow, Bastian Garden City feels like a chic holiday spot. Inspired by global trends and tailored to local tastes, Bastian Garden City blends our signature vibe with regional ingredients. Every visit offers a unique yet familiar Bastian experience, the perfect city escape.</p>
                     
-                    
-      
-                  
-                  
                   </div>
                   <div className="indulgence_text">
       

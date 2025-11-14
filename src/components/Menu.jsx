@@ -65,7 +65,12 @@ const MenuSection = ({branch}) => {
 
     return (
     <section id="menu" className="menu" ref={sectionRef}>
-      <img src={menuBg} alt="" className="banner_img" />
+
+      <div className="banner_img" style={{backgroundImage: `url(${menuBg})`}}>
+
+
+      </div>
+
 
       <div className="menu_section">
         <div className="heading">

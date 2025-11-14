@@ -1,5 +1,6 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import Header from "./Header.jsx";
+import Booking from "./Booking.jsx";
 import banner from '../assets/banner.png'
 import gardenImg from '../assets/bastian_garden_last.png';
 import empire from '../assets/bastian-empire-2.jpg';
@@ -7,6 +8,8 @@ import gsap from "gsap";
 
 const Hero = ({branch, setBranch}) => {
   const contentRef = useRef(null);
+
+  const [isOpen, setIsOpen] = useState(false);
 
   // Data for both branches
   const branchData = {
@@ -51,7 +54,8 @@ const Hero = ({branch, setBranch}) => {
       style={{backgroundImage: `url(${current.bgImage})`}}>
 
       <div className="hero-overlay">
-        <Header />
+        <Header onBookClick={() => setIsOpen(true)} />
+          <Booking isOpen={isOpen} onClose={() => setIsOpen(false)} />
         <div className="hero-content" ref={contentRef}>
           <h1>{current.title}</h1>
           <h2>{current.subtitle}</h2>

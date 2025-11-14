@@ -9,7 +9,6 @@ import img7 from "../assets/bastian-top-2.jpg";
 import img8 from "../assets/asset 11.png";
 
 
-
 import img10 from "../assets/bastian-empire-2.jpg";
 import img11 from "../assets/bastianempire.jpg";
 import gardenImg from '../assets/garden_main.png';

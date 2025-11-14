@@ -5,10 +5,8 @@ import img3 from "../assets/bastian-top-3.jpg";
 import img4 from "../assets/asset 6.jpeg";
 import img5 from "../assets/asset 5.png";
 import img6 from "../assets/asset 12.png";
-import img7 from "../assets/asset 11.png";
 import img8 from "../assets/asset 10.png";
 import img10 from "../assets/bastian_top_card.png";
-import img11 from "../assets/bastianempire.jpg";
 
 
 

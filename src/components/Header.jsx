@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../assets/logo.png";
 
 
-const Header =() =>{
+const Header =({onBookClick}) =>{
     return(
         <nav className="navbar">
             <div className="logo">
@@ -24,7 +24,7 @@ const Header =() =>{
 
             <div className="btns">
 
-                <button className="bookbtn"> Book Now</button>
+                <button className="bookbtn" onClick={onBookClick}> Book Now</button>
 
             </div>
 

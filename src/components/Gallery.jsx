@@ -7,8 +7,14 @@ import img5 from "../assets/asset 5.png";
 import img6 from "../assets/asset 12.png";
 import img8 from "../assets/asset 10.png";
 import img10 from "../assets/bastian_top_card.png";
-
-
+import food1 from "../assets/food-1.png";
+import food3 from "../assets/food-3.png";
+import food4 from "../assets/food-4.png";
+import food6 from "../assets/cake.png";
+import img11 from "../assets/bastian_garden_last.png";
+import img12 from "../assets/bastian_garden.png";
+import img14 from "../assets/bastian--garden.png";
+import img15 from "../assets/bastian-gardencity-1.png";
 
 
 const Gallery = ({branch}) => {
@@ -38,15 +44,41 @@ const Gallery = ({branch}) => {
           </div>
         </section>
       );
-    };
+      };
 
-    if(branch === "garden"){
+      if(branch === "garden"){
 
-      return(
-        <section></section>
-      )
- 
-    }
-}
+        return(
+          <section className="gallery_garden ">
+
+            <div className="gallery_garden_title">
+              
+              <h1>Don't Wait Book now!</h1>
+
+              <p>Sunday Brunch confirmed as the cure for Saturday nights 🧇🍳</p>
+
+            </div>
+
+          <div className="gallery_container">
+              <div className="perspective">
+
+              <img src={food1} alt="" className="foodimg" style={{"--i":1}}/>
+              <img src={img11} alt="" className="ambimg" style={{"--i":2}}/>
+              <img src={food6} alt="" className="foodimg" style={{"--i":3}}/>
+              <img src={img12} alt="" className="ambimg"style={{"--i":4}}/>
+              <img src={food3} alt="" className="foodimg" style={{"--i":5}}/>
+              <img src={img15} alt="" className="ambimg"style={{"--i":6}}/>
+              <img src={food4} alt="" className="foodimg"style={{"--i":7}}/>
+              <img src={img14} alt="" className="ambimg"style={{"--i":8}}/>
+
+            </div>
+              
+            </div>
+
+          </section>
+        )
+  
+      }
+  }
 
 export default Gallery;

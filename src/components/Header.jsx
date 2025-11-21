@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.png";
+import { Link }  from "react-router-dom";
 
 
 const Header =({onBookClick}) =>{
@@ -14,8 +15,8 @@ const Header =({onBookClick}) =>{
             <div className="navigation_links">
 
                 <ul>
-                    <li><a href="#about">Home</a></li>
-                    <li><a href="#menu">Our Story</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/ourstory">Our Story</Link></li>
                     <li><a href="#essence">The Buzz</a></li>    
                     <li><a href="#contact">Careers</a></li>
                 </ul>

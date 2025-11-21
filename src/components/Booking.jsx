@@ -47,7 +47,14 @@ const BookingPopup = ({ isOpen, onClose }) => {
 
         <form className="popup_form">
           <input type="text" placeholder="Full Name" required />
-          <input type="number" placeholder="Guests" required />
+          <select id="myDropdown" className="dropdown" name="myDropdownName">
+            <option value="option1_value">1</option>
+            <option value="option2_value">2</option>
+            <option value="option3_value">3</option>
+            <option value="option1_value">4</option>
+            <option value="option2_value">5</option>
+            <option value="option3_value">6</option>
+          </select>
           <input type="date" required />
           <input type="time" required />
           <textarea placeholder="Special Message" required></textarea>

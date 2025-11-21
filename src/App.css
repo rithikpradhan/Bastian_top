@@ -403,13 +403,14 @@ main {
 /* About Garden */
 
 .about-garden {
-  max-width: 1800px; 
+  max-width: 100%; 
   margin: 50px auto; 
   display: flex; 
   align-items: center; 
   justify-content: center; 
   gap: 60px;
   width: 90%; 
+  /* background: red; */
 }
 
 .about-garden-hero {
@@ -492,11 +493,13 @@ main {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: flex-start;
   padding: 40px;
   border-radius: 40px;
+  position: relative;
 }
+
 
 .container-2 h2{
   font-family: "Caviar Dreams", "Poppins", sans-serif;
@@ -714,6 +717,115 @@ main {
 }
 
 
+.gallery_garden{
+  max-width: 100%;
+  width: 100%;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+}
+
+
+
+.gallery_garden_title{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+.gallery_garden h1{
+  font-family: "Allura", cursive;
+  color: #F2CA99;
+  font-size: 3.5rem;
+  font-weight: 500;
+  line-height: 3.5rem;
+  text-align: center;
+}
+
+.gallery_garden_title p{
+  font-family: "Caviar Dreams", "Poppins", sans-serif;
+  text-align: center;
+  color: #F2CA99;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+.gallery_container{
+  display: flex;
+  gap: 20px;
+  
+}
+
+.perspective{
+  width: 100%;
+  height: 600px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: gallery 20s linear infinite;
+  
+}
+
+.perspective img{
+  position: absolute;
+  /* margin-top: 120px; */
+  width: 350px;
+  height: 450px;
+  object-fit: cover;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(700px);
+
+}
+
+@keyframes gallery {
+  0%{
+    transform: perspective(500px) rotateY(0deg);
+
+  }
+
+  100%{
+    transform: perspective(600px) rotateY(360deg);
+  }
+}
+
+
+.gallery_container::-webkit-scrollbar {
+  /* display: none; */
+}
+
+.foodimg,
+.ambimg{
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+/* 
+.foodimg{
+  scale: 0.7;
+}
+
+.ambimg{
+  scale: 1;
+} */
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-2860px);
+  }
+}
+
+
 /* Indulgence */
 
 .indulgence{
@@ -723,163 +835,55 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 60px;
   width: 100%;
   height: 100%;
-  /* background: red; */
 
 }
 
-.indulgence h1{
+.photo_container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+
+.photo_container img{
+  max-width: 100%;
+  width: 90%;
+  height: 300px;
+  object-fit: cover;
+}
+
+
+.indulgence_about{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-left: 2px solid #F2CA99;
+  gap: 30px;
+  padding: 20px;
+
+}
+
+.indulgence_about h1{
   font-family: "Allura", cursive;
   color: #F2CA99;
   font-size: 3.5rem;
-  font-weight: 600;
-  line-height: 3.5rem;
-  text-align: center;
-  margin: 20px 20px;
-  /* background: red; */
-}
-
-.indulgence span{
-  font-family: "Caviar Dreams", "Poppins", sans-serif;
-  text-align: center;
-  color: #F2CA99;
-  font-size: 2rem;
-  line-height: 2rem;
   font-weight: 500;
-  margin-bottom: 20px;
-}
-
-.indulgence_card{
-  width: 100%;
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: row-reverse;
-
-}
-
-.indulegnce_img{
-  height: 100%;
-  object-fit: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-
-.indulegnce_img h2{
-  font-family: "Caviar Dreams", "Poppins", sans-serif;
-  color: #8b5411ff;
-  font-size: 1.5rem;
-  font-weight: bold;
   line-height: 3.5rem;
-
 }
 
-.indulegnce_img p{
+.indulgence_about p{
   font-family: "Caviar Dreams", "Poppins", sans-serif;
-  color: #8b5411ff;
-  font-size: 1rem;
-  line-height: 2rem;
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 2.5rem;
   font-weight: 600;
-  width: 90%;
+  text-align: left;
 }
 
-.indulegnce_img img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.indulgence_text{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
-}
-
-.indulgence_text h2{
-  font-family: "Caviar Dreams", "Poppins", sans-serif;
-  color: #8b5411ff;
-  font-size: 1.5rem;
-  font-weight: bold;
-  line-height: 3.5rem;
-
-}
-
-.indulgence_text p{
-  font-family: "Caviar Dreams", "Poppins", sans-serif;
-  color: #8b5411ff;
-  font-size: 1rem;
-  line-height: 2rem;
-  font-weight: 600;
-  width: 90%;
-}
-
-.indulgence_text img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-@media (min-width: 706px) {
-
-   .indulgence_text{
-    flex: 1;
-  }
-
-    .indulegnce_img{
-    flex: 2;
-  }
-
-    .indulgence_card{
-    height: 400px;
-    border-bottom-right-radius: 120px 120px;
-    border-top-left-radius: 80px 80px;
-
-  }
-  
-  
-
-}
-
-@media (max-width: 425px) {
-
-      .indulgence{
-        gap: 20px;
-
-
-    }
-
-  
-    .indulgence h1{
-      font-size: 2.5rem;
-    }
-
-    .indulgence_card{
-    border-top-left-radius: 120px 120px;
-    border-bottom-right-radius: 80px 80px;
-  }
-
-    .indulegnce_img{
-      height: 100%;
-      object-fit: cover;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      text-align: left;
-
-    }
-
-
-}
 
 /* MENU */
 .menu {
@@ -1062,8 +1066,10 @@ main {
 }
 
 .form-container {
-  flex: 2;
   display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 20px;
   width: 100%;
@@ -1073,7 +1079,8 @@ main {
 }
 
 .popup_form{
-  flex: 1;
+  max-width: 600px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1089,7 +1096,7 @@ main {
 }
 
 .terms{
-  flex: 2;
+  max-width: 600px;
   background: rgba(12, 12, 12, 0.3);
   backdrop-filter: blur(2px);
   border-radius: 20px;
@@ -1105,13 +1112,15 @@ main {
 .terms h1{
   font-family: "Caviar Dreams", "Poppins", sans-serif;
   margin-bottom: 10px;
+  font-size: 1.5rem;
 
 }
 
 .terms li{
   font-family: "Caviar Dreams", "Poppins", sans-serif;
   text-align: left;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
   font-weight: 400;
 }
 
@@ -1133,8 +1142,8 @@ main {
   opacity: 0.8;
 }
 
-.popup_form input , textarea {
-  padding: 12px;
+.popup_form input , textarea , select {
+  padding: 15px 10px;
   border: 1px solid #F2CA99;
   border-radius: 5px;
   outline: none;
@@ -1142,6 +1151,19 @@ main {
   font-family: "Caviar Dreams", "Poppins", sans-serif;
   font-size: 15px;
   color: #F2CA99;
+}
+
+option {
+  font-family: "Caviar Dreams", "Poppins", sans-serif;
+  color: #F2CA99;
+  font-size: 15px;
+  background: #000;
+  transition: all 0.2s ease;
+}
+
+option:clicked {
+  background: #F2CA99;
+  color: #000;
 }
 
 input::placeholder {
@@ -1228,3 +1250,402 @@ textarea::placeholder {
   }
 
 }
+
+
+/* Our Story */
+
+.ourstory{
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  background: black;
+  align-items: center;
+  gap: 50px;
+  justify-content: center;
+}
+
+.main_text{
+  max-width: 1800px;
+  width: 90%;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  /* background: red; */
+}
+
+.ourstory h1{
+  font-family: "Allura", cursive;
+  color: #F2CA99;
+  font-size: 5.5rem;
+  font-weight: 500;
+  line-height: 1;
+  margin-top: 50px;
+}
+
+.ourstory
+ p{
+  font-family: "Caviar Dreams", "Poppins", sans-serif;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 2rem;
+  font-weight: 600;
+ }
+
+.story_container{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  /* background: yellow; */
+}
+
+.story_text{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.story_image{
+  max-width: 700px;
+  width: 100%;
+  height: 450px;
+  scale: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.story_image img{
+  width:  100% ;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.story_text{
+  flex: 1;
+}
+
+
+.vision{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 20px;
+}
+
+.vision h1{
+  font-size: 4rem;
+
+}
+
+.vision_card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.5)), url("../src/assets/ranjit_bindra.png");
+  background-size: contain;
+  background-position: center top 15%;
+  background-repeat: no-repeat;
+  min-width: 320px;
+  max-width: 650px;
+  width: 100%;
+  height: 550px;
+  scale: 0.9;
+  border-radius: 40px;
+}
+
+.vision_card2{
+
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.5)), url("../src/assets/shilpa_shetty.png");
+  background-size: contain;
+  background-position: center top;
+  background-repeat: no-repeat;
+
+}
+
+.vision_card3{
+
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.5)), url("../src/assets/kunal_jani.png");
+  background-size: contain;
+  background-position: center top 15%;
+  background-repeat: no-repeat;
+
+}
+
+.card_title{
+  padding: 20px;
+}
+
+.card_title h4{
+  font-family: "Allura", cursive;
+  color: #F2CA99;
+  font-size: 2.3rem;
+  font-weight: 500;
+  line-height: 1;
+
+}
+
+.card_info{
+  height: 200px;
+  width: 100%;
+  overflow-y: scroll;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(255, 255, 255, 0.2));
+  padding: 15px;
+}
+
+.card_info::-webkit-scrollbar {
+  display: none;
+
+}
+
+.card_info p{
+
+  color: #ffd8a8ff;
+  font-size: 1.1rem;
+  font-weight: bold;
+
+}
+
+.visionaries{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+}
+
+
+/* Tablets: 768px and below */
+@media (max-width: 1024px) {
+  .visionaries {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 600px and below */
+@media (max-width: 600px) {
+  .visionaries {
+    grid-template-columns: 1fr;
+  }
+}
+
+.link{
+  text-decoration: none;
+  color: black;
+}
+
+/* Legacy */
+.timeline_card {
+  width: 90%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 100px auto;
+  background: #f5eddd;
+  border-radius: 20px;
+  padding: 70px 20px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.timeline_card h2 {
+  position: absolute;
+  top: -95px;
+  left: 20px;
+  font-family: "Allura", cursive;
+  color: #F2CA99;
+  font-size: 4.5rem;
+  font-weight: 500;
+}
+
+.year_section {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.year_section h1 {
+  font-size: 12rem;
+  font-family: "Caviar Dreams", "Poppins", sans-serif;
+  color: #ecaf63ff;
+  font-weight: 500;
+  line-height: 3.5rem;
+  margin-top: 0;
+}
+
+.float_img {
+  max-width: 350px;
+  width: 100%;
+  max-height: 400px;
+  height: 100%;
+  scale: 0.7;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.float_img.left {
+  left: -40px;
+  top: 70%;
+
+}
+
+.float_img.right {
+  top: 10%;
+  left: 70%;
+
+}
+
+.content_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: center;
+}
+
+.content_section h3 {
+  font-family: "Allura", cursive;
+  /* font-family: "Caviar Dreams",  sans-serif; */
+  font-size: 3.5rem;
+  color: #ecaf63ff;
+  font-weight: 700;
+}
+
+.content_section p {
+  width: 100%;
+  margin: 10px auto 20px;
+  color: #331f07;
+  line-height: 1.7;
+}
+
+.nav_arrows button {
+  background:  #ecaf63ff;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin: 0 8px;
+}
+
+.timeline_bar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 2px solid rgba(0,0,0,0.1);
+}
+
+
+.timeline_bar .active {
+  color: #ecaf63ff;
+  font-weight: bold;
+}
+
+.timeline_bar .active::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: #ecaf63ff;
+  border-radius: 50%;
+  position: absolute;
+  top: -45px;
+  transform: translateX(-50%);
+}
+
+.indicator_line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 4px;
+  background: #ecaf63ff;
+  border-radius: 10px;
+  transform: translateX(0px);
+}
+
+
+.timeline_track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: rgba(0,0,0,0.15);
+  border-radius: 10px;
+}
+
+.timeline_progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: #ecaf63ff;
+  border-radius: 10px;
+}
+  
+.timeline_bar span {
+  font-size: 1.3rem;
+  color: #8e8984;
+  cursor: pointer;
+  margin-right: 20px;
+  position: relative;
+}
+  
+.timeline_bar span.active {
+   color: #ecaf63ff;
+  font-weight: bold;
+}
+
+@media (max-width: 1024px) {
+
+    .year_section h1 {
+        font-size: 8rem;  
+    }
+
+}
+
+@media (max-width: 425px) {
+
+    .year_section h1 {
+        font-size: 5rem;  
+    }
+
+    .float_img {
+      display: none;
+    }
+
+    .timeline_bar span {
+      font-size: 1.1rem;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,5 @@
 import React, { useRef, useState, useLayoutEffect } from "react";
+import { Link } from "react-router-dom";
 import img1 from "../assets/asset 4.png";
 import img2 from "../assets/asset 5.png";
 import img3 from "../assets/asset 6.jpeg";
@@ -7,10 +8,10 @@ import img5 from "../assets/asset 13.png";
 import img6 from "../assets/asset 10.png";
 import img7 from "../assets/bastian-top-2.jpg";
 import img8 from "../assets/asset 11.png";
-
-
 import img10 from "../assets/bastian-empire-2.jpg";
-import img11 from "../assets/bastianempire.jpg";
+import img12 from "../assets/asset 29.jpeg";
+import img13 from "../assets/asset 26.jpeg";
+
 import gardenImg from '../assets/garden_main.png';
 import gardenFood from '../assets/garden-food.png';
 import food1 from '../assets/food-1.png';
@@ -76,6 +77,7 @@ const About = ({branch}) => {
 
     const container = containerRef.current;
     const scrollAmount = container.offsetWidth;
+    
     container.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
@@ -183,9 +185,10 @@ const About = ({branch}) => {
               city views and a serene swimming pool.
             </p>
           </div>
-          <button className="read_more_btn">Read More</button>
+          <button className="read_more_btn"><Link to="/ourstory" className="link">Read More</Link></button>
         </div>
       </section>
+
   );
 
   }
@@ -210,8 +213,8 @@ const About = ({branch}) => {
                 </div>
 
                 <div className="container-2">
-                  <h2>Bastian Garden City</h2>
-                  <p>Bastian Garden City brings a chic, holiday-inspired vibe with stunning décor influenced by top travel destinations. Set in an opulent city-center bungalow, it combines global trends with local flair — making it one of the most sought-after fine dining restaurants in Bangalore.</p>
+                  <h2>Bastian Garden City </h2>
+                  <p>You’ve just entered Bastian Garden City — where every corner tells a story, and every detail is designed to dazzle. From the plush interiors to the ambient lighting, this is more than a dining experience; it’s a journey into luxury. 🌿🍽️  Set in a stunning space with décor inspired by chic holiday destinations across the world, Bastian Garden City is designed to impress. The al fresco sets the mood for an unforgettable night out, making it one of the best restaurants in Bangalore for romantic evenings, celebrations, and everything in between.</p>
                   <button className="bookbtn">Read More</button>
                 </div>
 
@@ -228,36 +231,23 @@ const About = ({branch}) => {
 
             return(
               <section className = "indulgence">
-      
-                <h1>Destination for </h1>
-                <span>Indulgence</span>
-      
-                <div className="indulgence_card">
-      
-                  <div className="indulegnce_img"><img src={img10} alt="" /></div>
-                  <div className="indulgence_text">
-                    <h2>Unique Dining & F&B Experience</h2>
-                    <p> With an extensive wine selection, curated coffee program, and standout offerings like an innovative vegan menu and a one-of-a-kind bakery, Bastian Garden City offers an F&B experience unlike any other in the city. Our Sunday brunch is a crowd favorite—designed to transport you to your favorite international holiday destination, all from the heart of the city.</p>
-      
-                  </div>
-      
+
+                <div className="photo_container">
+                  <img src={img10} alt="" />
+                  <img src={img12} alt="" />
+                  <img src={img13} alt="" />
                 </div>
-                <div className="indulgence_card card-reverse">
-      
-                  <div className="indulegnce_img">
-      
-                    <h2>Destination for Indulgence</h2>
-                    <p>Looking for a fine dine experience in Bangalore that brings together the best food, cocktails & nightlife? Housed in a luxurious Bengaluru bungalow, Bastian Garden City feels like a chic holiday spot. Inspired by global trends and tailored to local tastes, Bastian Garden City blends our signature vibe with regional ingredients. Every visit offers a unique yet familiar Bastian experience, the perfect city escape.</p>
-                    
-                  </div>
-                  <div className="indulgence_text">
-      
-                    <img src={img11} alt="" />
-       
-      
-                  </div>
-      
+
+                <div className="indulgence_about">
+
+                  <h1>Bastian Empire</h1>
+
+                  <p>Our latest launch in Pune, Bastian Empire depicts the inimitable blend of everything that the Bastian brand is known for: bold, striking interiors, glorious F&B offerings, and a distinctive vibe that feels exciting yet comfortable at the same time.Located in a high-rise, our 220-seater venue is one of Pune’s best restaurants, taking inspiration from contemporary caves, boasting a Cappadocia-inspired entrance, rustic cobblestone flooring, and a wabi-sabi aesthetic that seamlessly blends polished and raw elements for a truly global aesthetic and experience.</p>
+                  <p>The interiors create a chic yet relaxed vibe—perfect for Instagram-worthy moments. Unparalleled nightlife elevates the energy of the space which seamlessly blend party, perfectly crafted cocktails and dining vibes for a great, world-class experience.</p>
+                
+                 <button className="read_more_btn">Read More</button>
                 </div>
+
       
               </section>
             )

@@ -1,11 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import logo from "../assets/logo.png";
-import { Link }  from "react-router-dom";
+import logo from "../assets/logo.webp";
+import { Link } from "react-router-dom";
 
-
-const Header =({onBookClick}) =>{
-
+const Header = ({ onBookClick }) => {
   const [showNav, setShowNav] = useState(false);
   const [lastScroll, setLastScroll] = useState(0);
 
@@ -37,59 +35,56 @@ const Header =({onBookClick}) =>{
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  return (
+    <nav className="navbar">
+      <div className="logo">
+        <img src={logo} alt="Bastian Logo" />
+      </div>
 
+      <div className="navigation_links">
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/ourstory">Our Story</Link>
+          </li>
+          <li>
+            <a href="#essence">The Buzz</a>
+          </li>
+          <li>
+            <a href="#contact">Careers</a>
+          </li>
+        </ul>
+      </div>
 
+      <div className="btns">
+        <button className="bookbtn" onClick={onBookClick}>
+          {" "}
+          Book Now
+        </button>
+      </div>
 
+      <div className={`mobile_nav ${showNav ? "show" : ""}`}>
+        {/* your menu items */}
 
-
-    return(
-        <nav className="navbar">
-            <div className="logo">
-
-                <img src={logo} alt="Bastian Logo" />
-
-            </div>
-
-            <div className="navigation_links">
-
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/ourstory">Our Story</Link></li>
-                    <li><a href="#essence">The Buzz</a></li>    
-                    <li><a href="#contact">Careers</a></li>
-                </ul>
-
-            </div>
-
-            <div className="btns">
-
-                <button className="bookbtn" onClick={onBookClick}> Book Now</button>
-
-            </div>
-
-
-        <div className={`mobile_nav ${showNav ? "show" : ""}`}>
-            {/* your menu items */}
-
-             <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/ourstory">Our Story</Link></li>
-                    <li><a href="#essence">The Buzz</a></li>    
-                    <li><a href="#contact">Careers</a></li>
-            </ul>
-        </div>
-
-        </nav>
-
-
-
-
-        
-        
-
-
-
-    );
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/ourstory">Our Story</Link>
+          </li>
+          <li>
+            <a href="#essence">The Buzz</a>
+          </li>
+          <li>
+            <a href="#contact">Careers</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
 };
 
 export default Header;

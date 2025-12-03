@@ -1,13 +1,15 @@
 /* Google fonts (you can keep as before or use local fonts) */
-@import url('https://fonts.googleapis.com/css2?family=Allura&family=Sacramento&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Sacramento&display=swap");
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-};
+}
 
-body, #root, .App{
+body,
+#root,
+.App {
   width: 100%;
   min-height: 100%;
   background-color: #000;
@@ -16,12 +18,12 @@ body, #root, .App{
 
 @font-face {
   font-family: "Caviar Dreams";
-  src: url("../src/assets/fonts/caviar_dreams/CaviarDreams.ttf") format('woff2');
+  src: url("../src/assets/fonts/caviar_dreams/CaviarDreams.ttf") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
-.navbar{
+.navbar {
   max-width: 2200px;
   width: 90%;
   padding: 12px 24px;
@@ -32,110 +34,106 @@ body, #root, .App{
   font-size: 2.2rem;
 }
 
-.logo img{ 
-  width: 120px; 
-  height: auto; 
+.logo img {
+  width: 120px;
+  height: auto;
   display: block;
-
 }
 
- /* nav links */
-.navigation_links ul{ 
-  display: none; 
-  gap: 20px; 
-  align-items: center; 
+/* nav links */
+.navigation_links ul {
+  display: none;
+  gap: 20px;
+  align-items: center;
   list-style: none;
 }
 
-@media(min-width: 768px){
-  .navigation_links ul{
-    display: flex; 
-    gap: 20px; 
-    align-items: center; 
+@media (min-width: 768px) {
+  .navigation_links ul {
+    display: flex;
+    gap: 20px;
+    align-items: center;
     list-style: none;
   }
 
-  .mobile_nav{
+  .mobile_nav {
     display: none;
   }
 }
 
-.navigation_links a{
-   color: white;
-   text-decoration: none;
-   font-size: 18px; 
-   font-weight: 700;
-   transition: color .25s;
-}
-.navigation_links a:hover {
-   color: #F2CA99;
-}
-
-
-
-@media (max-width: 425px) {
-.mobile_nav {
-  position: fixed;
-  top: -110px;       /* hidden initially */
-  left: 0;
-  width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
-  transition: top 0.4s ease;
-  z-index: 9999;
-  padding: 15px 20px;
-}
-
-.mobile_nav.show {
-  top: 0;            /* slides down smoothly */
-}
-
-.mobile_nav ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-.mobile_nav ul li {
-  list-style: none;
-}
-
-.mobile_nav ul li a {
+.navigation_links a {
   color: white;
   text-decoration: none;
   font-size: 18px;
   font-weight: 700;
   transition: color 0.25s;
 }
-
-.mobile_nav ul li a:hover {
+.navigation_links a:hover {
   color: #f2ca99;
 }
 
+@media (max-width: 425px) {
+  .mobile_nav {
+    position: fixed;
+    top: -110px; /* hidden initially */
+    left: 0;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+    transition: top 0.4s ease;
+    z-index: 9999;
+    padding: 15px 20px;
+  }
+
+  .mobile_nav.show {
+    top: 0; /* slides down smoothly */
+  }
+
+  .mobile_nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .mobile_nav ul li {
+    list-style: none;
+  }
+
+  .mobile_nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    transition: color 0.25s;
+  }
+
+  .mobile_nav ul li a:hover {
+    color: #f2ca99;
+  }
 }
 
 .btns {
-   display: flex;
-   gap: 10px;
-   align-items: center;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .bookbtn {
   padding: 14px 26px;
   border-radius: 10px;
-  border: 1px solid #F2CA99;
+  border: 1px solid #f2ca99;
   background: transparent;
   font-family: "Caviar Dreams", "Poppins", sans-serif;
   font-size: 18px;
-  color: #F2CA99;
+  color: #f2ca99;
   font-weight: 500;
   cursor: pointer;
-  transition: all .25s ease;
+  transition: all 0.25s ease;
 }
 .bookbtn:hover {
-   transform: scale(.98);
-   background: #F2CA99;
-   color: #000;
+  transform: scale(0.98);
+  background: #f2ca99;
+  color: #000;
 }
 
 .hero {
@@ -171,14 +169,14 @@ body, #root, .App{
 
 .hero-content h1 {
   font-family: "Sacramento", cursive;
-  color: #F2CA99;
+  color: #f2ca99;
   font-size: 4.3rem;
   font-weight: 300;
 }
 
 .hero-content h2 {
   font-family: "Allura", cursive;
-  color: #F2CA99;
+  color: #f2ca99;
   font-size: 3.6rem;
   font-weight: 400;
 }
@@ -200,12 +198,12 @@ body, #root, .App{
   margin: 0 10px;
   margin-top: 1rem;
   padding: 0.8rem 1.6rem;
-  border: 1px solid #F2CA99;
+  border: 1px solid #f2ca99;
   font-family: "Caviar Dreams", "Poppins", sans-serif;
   font-size: 1.2rem;
   border-radius: 6px;
   background: transparent;
-  color: #F2CA99;
+  color: #f2ca99;
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 700;
@@ -213,30 +211,28 @@ body, #root, .App{
 }
 
 .branch-btn:hover {
-  background: #F2CA99;
+  background: #f2ca99;
   color: #000;
   scale: 1;
 }
 
 .branch-btn.active {
-  background: #F2CA99;
+  background: #f2ca99;
   color: #000;
 }
 
 @media (max-width: 425px) {
-
   .navbar {
     justify-content: space-between;
     padding: 12px 2px;
   }
 
-  .navigation_links ul{ 
-    display: none; 
+  .navigation_links ul {
+    display: none;
   }
 
   .hero-content {
     gap: 1rem;
-
   }
 
   .hero-content h1 {
@@ -249,37 +245,38 @@ body, #root, .App{
 
   .hero-content p {
     font-size: 1.1rem;
-
   }
-
-
 }
 
 /* MAIN / ABOUT */
-main { 
-   width: 100%;
-   display: flex; 
-   flex-direction: column; 
-   background: #000;
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #000;
 }
 
 /* ABOUT */
-.about_us { 
-  max-width: 1800px; 
-  margin: 50px auto; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
+.about_us {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 60px;
-  width: 90%; 
+  width: 100%;
+  padding: 80px 20px;
   flex-wrap: wrap;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+    url("../src/assets/post-4.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.about_us_picture{
-  width: 35%;
+.about_us_picture {
+  flex: 1;
   height: 550px;
   position: relative;
-  display: flex; 
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -287,21 +284,25 @@ main {
 .image-container {
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 350px;
+  left: -15px;
+  width: 450px;
   height: 350px;
+  scale: 0.8;
   z-index: 1;
 }
 
 .image-sub-container {
   position: absolute;
-  top: 0;
-  width: 280px;
-  height: 300px;
-  scale: 0.9;
-  border-radius: 10px;
+  top: -10px;
+  right: 5%;
+  max-width: 450px;
+  width: 100%;
+  height: 60%;
+  border-radius: 15px;
   display: flex;
+  scale: 0.9;
   overflow-x: scroll;
+  overflow-y: hidden;
   scroll-behavior: smooth;
   scrollbar-width: none;
 }
@@ -316,6 +317,7 @@ main {
   height: 100%;
   border-radius: 10px;
   object-fit: cover;
+  border: 5px solid white;
   flex-shrink: 0;
 }
 
@@ -326,7 +328,6 @@ main {
   display: flex;
   align-self: flex-end;
   gap: 20px;
-
 }
 
 .slide-btn {
@@ -352,112 +353,206 @@ main {
   right: -25px;
 }
 
+.about_us_picture img,
+.about_us_des,
+.image-sub-container img {
+  will-change: transform, opacity;
+}
 
-.about_us_des { 
-
+.about_us_des {
   display: flex;
   flex-direction: column;
-  justify-content: justify-between;
+  justify-content: space-evenly;
   align-items: flex-start;
-  gap: 20px; 
-
+  gap: 20px;
 }
 
-.about_us_des h3, .about_us_des h1 {
-   color: #F2CA99; 
-   font-family: "Allura", cursive; 
+.about_us_des h3,
+.about_us_des h1 {
+  color: #f2ca99;
+  font-family: "Allura", cursive;
 }
 .about_us_des h3 {
-   font-size: 2.5rem;
+  font-size: 3rem;
+  font-weight: 500;
 }
 
-.para{
+.para {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
 .about_us_des h1 {
-   font-size: 3.5rem;
-   font-weight: 500;
-   line-height: 3.5rem;
-
+  font-size: 3.5rem;
+  font-weight: 500;
+  line-height: 3.5rem;
 }
-.about_us_des p { 
+.about_us_des p {
   font-family: "Caviar Dreams", "Poppins", sans-serif;
-  color: #fff; 
-  font-size: 20px; 
-  line-height: 2rem; 
-  font-weight: 600; 
+  color: #fff;
+  font-size: 18px;
+  line-height: 2rem;
+  font-weight: 600;
 }
 .read_more_btn {
-   font-family: "Caviar Dreams", "Poppins", sans-serif;
-   font-size: 1rem;
-   font-weight: 600;
-   background: #F2CA99; 
-   color: #000; 
-   padding: 10px 18px; 
-   border-radius: 6px; 
-   border: none; 
-   cursor: pointer;
+  font-family: "Caviar Dreams", "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #f2ca99;
+  color: #000;
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.image-container {
+  position: relative;
+  width: 430px;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.main_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+  border: 4px solid #fff;
+}
+
+/* Shine effect */
+.image-shine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+.thumb {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+.about-wrapper {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  padding: 80px 0;
+}
+
+.about-image {
+  width: 380px;
+  border-radius: 18px;
+  opacity: 0;
+  --shine-x: -40%;
+
+  /* Shine overlay */
+  position: relative;
+  overflow: hidden;
+}
+
+.about-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--shine-x);
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    70deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
+}
+
+.about-text {
+  font-size: 1.2rem;
+  max-width: 520px;
+  opacity: 0;
+
+  background: linear-gradient(
+    120deg,
+    #ffffff 0%,
+    #ffffff 40%,
+    #ffd9d9 60%,
+    #ffffff 80%
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 @media (min-width: 768px) {
-
-  .about_us_des { 
+  .about_us_des {
     flex: 1;
   }
-
 }
 
 @media (max-width: 425px) {
+  .about_us_des h3 {
+    font-size: 2.3rem;
+  }
 
-    .about_us_des h3 {
-      font-size: 2.3rem;
-    }
+  .about_us_des h1 {
+    font-size: 2.5rem;
+  }
 
-    .about_us_des h1 {
-      font-size: 2.5rem;
+  .about_us_des p {
+    font-size: 1.1rem;
+  }
 
-    }
+  .about_us_picture {
+    flex: 1;
+    height: 450px;
+  }
 
-      .about_us_des p { 
-      font-size: 1.1rem; 
-    }
+  .image-container {
+    width: 250px;
+    height: 250px;
+  }
 
-      .about_us_picture{
-        flex: 1;
-        height: 450px;
-    }
-
-      .image-container {
-        width: 250px;
-        height: 250px;
-    }
-
-      .image-sub-container {
-        width: 400px;
-        height: 350px;
-
-    }
-      .slide-btn {
-        font-size: 12px;
-    }
-
-
+  .image-sub-container {
+    width: 400px;
+    height: 350px;
+  }
+  .slide-btn {
+    font-size: 12px;
+  }
 }
 
 /* About Garden */
 
 .about-garden {
-  max-width: 100%; 
-  margin: 50px auto; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
+  max-width: 100%;
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 60px;
-  width: 90%; 
-  /* background: red; */
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)),
+    url("../src/assets/post-13.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .about-garden-hero {
@@ -465,12 +560,12 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  width: 90%;
+  /* background: blue; */
 }
 
 .about-garden-hero h1 {
   font-family: "Allura", cursive;
-  color: #F2CA99;
+  color: #f2ca99;
   font-size: 3.5rem;
   font-weight: 500;
   line-height: 3.5rem;
@@ -485,49 +580,41 @@ main {
   font-weight: 600;
 }
 
-.garden-section{
+.garden-section {
   display: flex;
   flex-direction: column;
   gap: 40px;
   width: 100%;
 }
 
-.garden_container{
+.garden_container {
   display: flex;
-  gap: 20px;
+  flex-direction: row-reverse;
   flex-wrap: wrap;
   justify-content: center;
-  height: auto;
 }
 
-.container-1{
-  flex: 1;
+.container-1 {
   position: relative;
-  width: 400px;
-  height: 450px;
-  background: #F2CA99;
-  padding: 20px;
-  border-radius: 40px;
+  width: 600px;
+  height: 650px;
+  clip-path: polygon(27% 0, 100% 0%, 100% 100%, 0 100%);
 }
 
-.container-1 img {
-  position: absolute;
-  width: 60%;
-  height: 50%;
+.container-1 video {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 10px;
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
-.garden-img{
+.garden-img {
   position: absolute;
   bottom: 15%;
   right: 40px;
   transform: rotate(5deg);
-  
 }
 
-.pool-img{
+.pool-img {
   position: absolute;
   top: 15%;
   left: 10%;
@@ -536,79 +623,73 @@ main {
 }
 
 .container-2 {
-  background: #F2CA99;
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 80px 20px;
   justify-content: space-evenly;
   align-items: flex-start;
-  padding: 40px;
-  border-radius: 40px;
-  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-
-.container-2 h2{
+.container-2 h2 {
   font-family: "Caviar Dreams", "Poppins", sans-serif;
-  font-size: 2rem;
-  color: #884e07ff;
+  font-size: 3rem;
+  color: #f2ca99;
   font-weight: bold;
-
 }
 
-.container-2 p{
-  font-size: 1rem;
-  line-height: 1.8rem;
+.container-2 p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 2rem;
   text-align: left;
-  color: #583509ff;
+  color: #fff;
 }
 
-.container-2 button{
+.container-2 button {
   background: white;
   color: #000;
-  font-size: 1.1rem;
-  padding: 10px 20px;
+  background: #f2ca99;
+  font-size: 1rem;
+  padding: 10px 15px;
   border-radius: 10px;
   font-weight: bold;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   border: none;
 }
 
-.container-2 button:hover{
+.container-2 button:hover {
   background: white;
   cursor: pointer;
 }
 
 @media (min-width: 706px) {
+  .navigation_links {
+    display: block;
+  }
 
-    .navigation_links {
-      display: block;
-    }
-
-      .container-2 {
-      background: #F2CA99;
-      flex: 2;
-    }
-
+  .container-2 {
+    /* flex: 2; */
+  }
 }
 
 @media (max-width: 425px) {
+  .about-garden-hero h1 {
+    font-size: 2.5rem;
+  }
 
-    .about-garden-hero h1 {
-      font-size: 2.5rem;
-
-    }
-
-    .about-garden-hero p {
-      font-size: 1.1rem;
-
-    }
-
+  .about-garden-hero p {
+    font-size: 1.1rem;
+  }
 }
 
 /* Gallery */
 
-.gallery{
+.gallery {
   max-width: 100%;
   margin: 30px auto;
   display: flex;
@@ -616,7 +697,7 @@ main {
   justify-content: center;
   width: 90%;
 }
-.gallery-content{
+.gallery-content {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -627,7 +708,7 @@ main {
 
 .gallery-content h2 {
   font-family: "Allura", cursive;
-  color: #F2CA99;
+  color: #f2ca99;
   font-size: 3.5rem;
   font-weight: 500;
   line-height: 3.5rem;
@@ -637,33 +718,32 @@ main {
 .gallery-content span {
   font-family: "Caviar Dreams", "Poppins", sans-serif;
   text-align: center;
-  color: #F2CA99;
+  color: #f2ca99;
   font-size: 1.2rem;
   line-height: 2rem;
   font-weight: 600;
 }
 
 .parent {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    grid-auto-rows: 300px;
-    gap: 20px;
-    width: 100%;
-    padding: 30px 0;
-   
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-auto-rows: 300px;
+  gap: 20px;
+  width: 100%;
+  padding: 30px 0;
 }
 
 .parent div {
-    position: relative;
-    border-radius: 20px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
 .parent div:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
 }
 
 .parent div img {
@@ -681,7 +761,7 @@ main {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.3), rgba(0,0,0,0));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -695,23 +775,21 @@ main {
   grid-row: span 2;
 }
 
-.div4{
+.div4 {
   grid-row: span 1;
 }
 
-.div5{
+.div5 {
   grid-column: span 2;
-  
 }
 
-.div6{
+.div6 {
   grid-row: span 2;
   grid-column: span 2;
 }
 
-.div8{
+.div8 {
   grid-column: span 2;
-
 }
 
 @media (max-width: 1200px) {
@@ -744,140 +822,134 @@ main {
   }
 
   .gallery-content h2 {
-  font-family: "Allura", cursive;
-  color: #F2CA99;
-  font-size: 3rem;
-  font-weight: 500;
-  line-height: 3.5rem;
-  text-align: center;
+    font-family: "Allura", cursive;
+    color: #f2ca99;
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 3.5rem;
+    text-align: center;
+  }
+
+  .gallery-content span {
+    font-family: "Caviar Dreams", "Poppins", sans-serif;
+    text-align: center;
+    color: #f2ca99;
+    font-size: 1.1rem;
+    line-height: 2rem;
+    font-weight: 600;
+  }
 }
 
-
-.gallery-content span {
-  font-family: "Caviar Dreams", "Poppins", sans-serif;
-  text-align: center;
-  color: #F2CA99;
-  font-size: 1.1rem;
-  line-height: 2rem;
-  font-weight: 600;
-}
-}
-
-
-.gallery_garden{
+.gallery_garden {
   max-width: 100%;
   width: 100%;
-  margin: 30px auto;
   display: flex;
   flex-direction: column;
   gap: 50px;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-
+  padding: 80px 0px;
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)),
+    url("../src/assets/post-13.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-
-
-.gallery_garden_title{
+.gallery_garden_title {
   display: flex;
   flex-direction: column;
   gap: 20px;
-
 }
 
-.gallery_garden h1{
+.gallery_garden h1 {
   font-family: "Allura", cursive;
-  color: #F2CA99;
+  color: #f2ca99;
   font-size: 3.5rem;
   font-weight: 500;
   line-height: 3.5rem;
   text-align: center;
 }
 
-.gallery_garden_title p{
+.gallery_garden_title p {
   font-family: "Caviar Dreams", "Poppins", sans-serif;
   text-align: center;
-  color: #F2CA99;
+  color: #f2ca99;
   font-size: 1.2rem;
   line-height: 2rem;
   font-weight: 600;
 }
 
-.gallery_container{
-  display: flex;
+.gallery_container {
   gap: 20px;
-  
-}
-
-.perspective{
   width: 100%;
-  height: 600px;
-  position: relative;
-  transform-style: preserve-3d;
-  transform: perspective(1000px);
-  animation: gallery 20s linear infinite;
-  
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-evenly;
 }
 
-.perspective img{
-  position: absolute;
-  /* margin-top: 120px; */
+.img_1 {
   width: 350px;
   height: 450px;
+}
+
+.img_1 img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  transform-style: preserve-3d;
-  transform: rotateY(calc(var(--i) * 45deg)) translateZ(700px);
-
+}
+.img_2 {
+  width: 350px;
+  height: 650px;
 }
 
-@keyframes gallery {
-  0%{
-    transform: perspective(500px) rotateY(0deg);
-
-  }
-
-  100%{
-    transform: perspective(600px) rotateY(360deg);
-  }
-}
-
-
-.gallery_container::-webkit-scrollbar {
-  /* display: none; */
-}
-
-.foodimg,
-.ambimg{
-  width: 200px;
-  height: 250px;
+.img_2 img {
+  width: 100%;
+  height: 80%;
   object-fit: cover;
-  border-radius: 15px;
-}
-/* 
-.foodimg{
-  scale: 0.7;
 }
 
-.ambimg{
-  scale: 1;
-} */
-
-@keyframes move {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-2860px);
-  }
+.img_3 {
+  width: 400px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
+.img_3 p {
+  font-family: "Caviar Dreams", "Poppins", sans-serif;
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+.img_3 a {
+  font-family: "Caviar Dreams", "Poppins", sans-serif;
+  color: #000;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.img_3 a:hover {
+  color: #f2ca99;
+}
+
+.img_3 img {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+}
 
 /* Indulgence */
 
-.indulgence{
-  max-width: 90%;
-  margin: 50px auto;
+.indulgence {
+  max-width: 100%;
+  margin: 0px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -885,70 +957,103 @@ main {
   gap: 60px;
   width: 100%;
   height: 100%;
-
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)),
+    url("../src/assets/post-14.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.photo_container{
+.indulgence_about {
+  max-width: 90%;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  justify-content: center;
-}
-
-.photo_container img{
-  max-width: 100%;
-  width: 90%;
-  height: 300px;
-  object-fit: cover;
-}
-
-
-.indulgence_about{
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  border-left: 2px solid #F2CA99;
+  align-items: center;
   gap: 30px;
-  padding: 20px;
-
+  padding: 80px 20px;
 }
 
-.indulgence_about h1{
+.indulgence_about h1 {
   font-family: "Allura", cursive;
-  color: #F2CA99;
+  color: #f2ca99;
   font-size: 3.5rem;
   font-weight: 500;
   line-height: 3.5rem;
 }
 
-.indulgence_about p{
+.indulgence_about p {
+  max-width: 950px;
   font-family: "Caviar Dreams", "Poppins", sans-serif;
   color: #fff;
   font-size: 1.2rem;
   line-height: 2.5rem;
   font-weight: 600;
-  text-align: left;
+  /* background: green; */
 }
 
+/* Gallery */
+
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  overflow: hidden;
+}
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 2; /* show above overlay */
+}
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
 
 /* MENU */
 .menu {
-    max-width: 1800px;
-    margin: auto; 
-    width: 90%; 
-    display: flex; 
-    flex-direction: column;
-    gap: 40px;
+  max-width: 1800px;
+  margin: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 .menu_section {
-   display: flex; 
-   gap: 40px; 
-   align-items: center; 
-   flex-wrap: wrap; 
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.banner_img{
+.banner_img {
   position: relative;
   width: 100%;
   height: 350px;
@@ -960,7 +1065,6 @@ main {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
 }
 
 .banner_img::after {
@@ -971,83 +1075,77 @@ main {
   z-index: 1;
 }
 
-
 .banner_img p:hover {
   background: rgba(0, 0, 0, 0.5);
   padding: 10px 20px;
-
 }
 
-
-
-
 .heading {
-    flex: 1;
-    display: flex; 
-    flex-direction: column; 
-    gap: 12px; 
-    align-items: flex-start; 
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
 }
 
 .heading p {
-    font-family: "Caviar Dreams", "Poppins", sans-serif;
-    font-size: 1.5rem;
-    color: #F2CA99;
-    font-weight: 600; 
+  font-family: "Caviar Dreams", "Poppins", sans-serif;
+  font-size: 1.5rem;
+  color: #f2ca99;
+  font-weight: 600;
 }
 
 .heading a {
-   font-family: "Caviar Dreams", "Poppins", sans-serif;
-   font-size: 1.3rem;
-   color: #000;
-   padding: 10px 20px;
-   background: #F2CA99;
-   font-weight: 600;
-   text-decoration: none;
-   display: flex;
-   align-items: center;
-   gap: 10px;
-   vertical-align: center;
+  font-family: "Caviar Dreams", "Poppins", sans-serif;
+  font-size: 1.3rem;
+  color: #000;
+  padding: 10px 20px;
+  background: #f2ca99;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  vertical-align: center;
 }
 
-
 .heading h1 {
-   font-family: "Allura", cursive; 
-   font-size: 4rem;
-   font-weight: 500;
-   color: #F2CA99; 
-  }
-.menu_para { 
-  flex: 1; 
+  font-family: "Allura", cursive;
+  font-size: 4rem;
+  font-weight: 500;
+  color: #f2ca99;
+}
+.menu_para {
+  flex: 1;
   min-width: 300px;
-  display: flex; 
-  flex-direction: column; 
-  gap: 12px; 
-  align-items: center; 
-  text-align: center; 
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  text-align: center;
 }
 
 .menu_para p {
   font-family: "Caviar Dreams", "Poppins", sans-serif;
-  color: #fff; 
-  font-size: 1.2rem; 
-  line-height: 2rem; 
-  font-weight: 600; 
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  font-weight: 600;
 }
 
 .mini_des {
-   display: flex; 
-   gap: 20px; 
-   justify-content: center; 
-   flex-wrap: wrap;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .mini_des span {
-  display: flex; 
-  gap: 10px; 
-  align-items: center; 
+  display: flex;
+  gap: 10px;
+  align-items: center;
   font-family: "Caviar Dreams", "Poppins", sans-serif;
-  color:  #F2CA99;
+  color: #f2ca99;
   font-size: 1rem;
   font-weight: 600;
   /* line-height: 1rem; */
@@ -1059,33 +1157,119 @@ main {
 }
 
 /* menu cards horizontal */
-.menu_cards { 
-  display: flex; 
-  gap: 20px; 
-  overflow-x: auto; 
-  padding-bottom: 8px; 
+.menu_cards {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 8px;
 }
 
 .menu_cards::-webkit-scrollbar {
   display: none;
 }
 
-.menu_cards img { 
-  border-radius: 8px; 
+.menu_cards img {
+  border-radius: 8px;
   object-fit: cover;
 }
 .image_class-1 {
-   width: 200px;
-   height: 300px; 
+  width: 200px;
+  height: 300px;
 }
 .image_class-2 {
   width: 300px;
-  height: 450px; 
+  height: 450px;
+}
+
+.empire-menu {
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)),
+    url("../src/assets/post-14.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empire_menu_content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.menu_content_text {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 80px 20px;
+  gap: 20px;
+}
+
+.garden_menu {
+  position: relative;
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.garden_menu video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (min-width: 706px) {
+  .menu_content_text {
+    flex: 1;
+  }
+}
+
+.menu_content_text h1 {
+  font-family: "Allura", cursive;
+  color: #f2ca99;
+  font-size: 4.5rem;
+  font-weight: 500;
+  line-height: 3.5rem;
+  text-align: center;
+}
+
+.menu_content_text p {
+  font-family: "Caviar Dreams", "Poppins", sans-serif;
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+
+  font-weight: 600;
+  text-align: left;
+}
+
+.slider_container {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+@media (min-width: 706px) {
+  .menu_content_photo {
+    flex: 1;
+  }
 }
 
 @media (max-width: 425px) {
-
-  .heading { 
+  .heading {
     align-items: center;
   }
 
@@ -1094,13 +1278,13 @@ main {
   }
 }
 
-
 /* Booking Popup */
 
 .popup_overlay {
   position: fixed;
   inset: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url("../src/assets/bastian_top_card.png");
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)),
+    url("../src/assets/bastian_top_card.png");
   backdrop-filter: blur(5px);
   background-repeat: no-repeat;
   background-size: cover;
@@ -1122,10 +1306,9 @@ main {
   width: 100%;
   height: auto;
   padding: 20px;
-
 }
 
-.popup_form{
+.popup_form {
   max-width: 600px;
   width: 100%;
   display: flex;
@@ -1137,44 +1320,45 @@ main {
   background: rgba(12, 12, 12, 0.3);
   backdrop-filter: blur(5px);
   border-radius: 20px;
-  box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
   color: #fff;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.terms{
+.terms {
   max-width: 600px;
+  height: 450px;
   background: rgba(12, 12, 12, 0.3);
   backdrop-filter: blur(2px);
   border-radius: 20px;
-  box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
   color: #fff;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 40px;
 }
 
-.terms h1{
+.popup_form h1 {
   font-family: "Caviar Dreams", "Poppins", sans-serif;
   margin-bottom: 10px;
   font-size: 1.5rem;
-
 }
 
-.terms li{
+.popup_form li {
   font-family: "Caviar Dreams", "Poppins", sans-serif;
   text-align: left;
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 400;
+  list-style: none;
 }
 
 /* Title */
 .popup_title {
   font-family: "Allura", "Poppins", sans-serif;
-  color: #F2CA99;
+  color: #f2ca99;
   font-size: 4.5rem;
   font-weight: 500;
   text-align: center;
@@ -1183,42 +1367,44 @@ main {
 /* Subtitle */
 .popup_subtext {
   font-family: "Caviar Dreams", "Poppins", sans-serif;
-  color: #F2CA99;
+  color: #f2ca99;
   font-size: 1.5rem;
   text-align: center;
   opacity: 0.8;
 }
 
-.popup_form input , textarea , select {
+.popup_form input,
+textarea,
+select {
   padding: 15px 10px;
-  border: 1px solid #F2CA99;
+  border: 1px solid #f2ca99;
   border-radius: 5px;
   outline: none;
   background: transparent;
   font-family: "Caviar Dreams", "Poppins", sans-serif;
   font-size: 15px;
-  color: #F2CA99;
+  color: #f2ca99;
 }
 
 option {
   font-family: "Caviar Dreams", "Poppins", sans-serif;
-  color: #F2CA99;
+  color: #f2ca99;
   font-size: 15px;
   background: #000;
   transition: all 0.2s ease;
 }
 
 option:clicked {
-  background: #F2CA99;
+  background: #f2ca99;
   color: #000;
 }
 
 input::placeholder {
-  color: #F2CA99;   /* your color */
+  color: #f2ca99; /* your color */
 }
 
 textarea::placeholder {
-  color: #F2CA99;   /* your color */
+  color: #f2ca99; /* your color */
 }
 
 .submit_btn {
@@ -1257,20 +1443,16 @@ textarea::placeholder {
   transform: scale(1.2);
 }
 
-
 @media (max-width: 425px) {
-
   .popup_overlay {
     height: 100%;
     padding: 10px;
   }
   .popup_title {
     font-size: 3.5rem;
-
   }
   .popup_subtext {
     font-size: 1.1rem;
-
   }
 
   .popup_form {
@@ -1295,13 +1477,11 @@ textarea::placeholder {
     text-align: left;
     margin-left: 10px;
   }
-
 }
-
 
 /* Our Story */
 
-.ourstory{
+.ourstory {
   max-width: 100%;
   width: 100%;
   height: 100%;
@@ -1314,7 +1494,7 @@ textarea::placeholder {
   justify-content: center;
 }
 
-.main_text{
+.main_text {
   max-width: 1800px;
   width: 90%;
   margin: 0px auto;
@@ -1322,36 +1502,34 @@ textarea::placeholder {
   flex-direction: column;
   justify-content: space-between;
   gap: 20px;
-  /* background: red; */
 }
 
-.ourstory h1{
+.ourstory h1 {
   font-family: "Allura", cursive;
-  color: #F2CA99;
+  color: #f2ca99;
   font-size: 5.5rem;
   font-weight: 500;
   line-height: 1;
   margin-top: 50px;
+  text-align: center;
 }
 
-.ourstory
- p{
+.ourstory p {
   font-family: "Caviar Dreams", "Poppins", sans-serif;
   color: #fff;
   font-size: 1rem;
   line-height: 2rem;
   font-weight: 600;
- }
+}
 
-.story_container{
+.story_container {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   height: 100%;
-  /* background: yellow; */
 }
 
-.story_text{
+.story_text {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -1359,7 +1537,7 @@ textarea::placeholder {
   justify-content: center;
 }
 
-.story_image{
+.story_image {
   max-width: 700px;
   width: 100%;
   height: 450px;
@@ -1367,22 +1545,20 @@ textarea::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
-.story_image img{
-  width:  100% ;
+.story_image img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 15px;
 }
 
-.story_text{
+.story_text {
   flex: 1;
 }
 
-
-.vision{
+.vision {
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -1390,17 +1566,17 @@ textarea::placeholder {
   padding-inline: 20px;
 }
 
-.vision h1{
+.vision h1 {
   font-size: 4rem;
-
 }
 
-.vision_card{
+.vision_card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 20px;
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.5)), url("../src/assets/ranjit_bindra.png");
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.5)),
+    url("../src/assets/ranjit_bindra.png");
   background-size: contain;
   background-position: center top 15%;
   background-repeat: no-repeat;
@@ -1412,38 +1588,35 @@ textarea::placeholder {
   border-radius: 40px;
 }
 
-.vision_card2{
-
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.5)), url("../src/assets/shilpa_shetty.png");
+.vision_card2 {
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.5)),
+    url("../src/assets/shilpa_shetty.png");
   background-size: contain;
   background-position: center top;
   background-repeat: no-repeat;
-
 }
 
-.vision_card3{
-
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.5)), url("../src/assets/kunal_jani.png");
+.vision_card3 {
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.5)),
+    url("../src/assets/kunal_jani.png");
   background-size: contain;
   background-position: center top 15%;
   background-repeat: no-repeat;
-
 }
 
-.card_title{
+.card_title {
   padding: 20px;
 }
 
-.card_title h4{
+.card_title h4 {
   font-family: "Allura", cursive;
-  color: #F2CA99;
+  color: #f2ca99;
   font-size: 2.3rem;
   font-weight: 500;
   line-height: 1;
-
 }
 
-.card_info{
+.card_info {
   height: 200px;
   width: 100%;
   overflow-y: scroll;
@@ -1453,24 +1626,19 @@ textarea::placeholder {
 
 .card_info::-webkit-scrollbar {
   display: none;
-
 }
 
-.card_info p{
-
+.card_info p {
   color: #ffd8a8ff;
   font-size: 1.1rem;
   font-weight: bold;
-
 }
 
-.visionaries{
+.visionaries {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  
 }
-
 
 /* Tablets: 768px and below */
 @media (max-width: 1024px) {
@@ -1486,7 +1654,7 @@ textarea::placeholder {
   }
 }
 
-.link{
+.link {
   text-decoration: none;
   color: black;
 }
@@ -1502,7 +1670,7 @@ textarea::placeholder {
   border-radius: 20px;
   padding: 70px 20px;
   position: relative;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
 }
 
 .timeline_card h2 {
@@ -1510,7 +1678,7 @@ textarea::placeholder {
   top: -95px;
   left: 20px;
   font-family: "Allura", cursive;
-  color: #F2CA99;
+  color: #f2ca99;
   font-size: 4.5rem;
   font-weight: 500;
 }
@@ -1542,20 +1710,18 @@ textarea::placeholder {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
 
 .float_img.left {
   left: -40px;
   top: 70%;
-
 }
 
 .float_img.right {
   top: 10%;
   left: 70%;
-
 }
 
 .content_section {
@@ -1567,7 +1733,6 @@ textarea::placeholder {
 
 .content_section h3 {
   font-family: "Allura", cursive;
-  /* font-family: "Caviar Dreams",  sans-serif; */
   font-size: 3.5rem;
   color: #ecaf63ff;
   font-weight: 700;
@@ -1578,10 +1743,11 @@ textarea::placeholder {
   margin: 10px auto 20px;
   color: #331f07;
   line-height: 1.7;
+  font-size: 1.1rem;
 }
 
 .nav_arrows button {
-  background:  #ecaf63ff;
+  background: #ecaf63ff;
   color: white;
   border: none;
   padding: 10px 14px;
@@ -1597,9 +1763,8 @@ textarea::placeholder {
   justify-content: space-between;
   margin-top: 40px;
   padding-top: 40px;
-  border-top: 2px solid rgba(0,0,0,0.1);
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
 }
-
 
 .timeline_bar .active {
   color: #ecaf63ff;
@@ -1628,14 +1793,13 @@ textarea::placeholder {
   transform: translateX(0px);
 }
 
-
 .timeline_track {
   position: absolute;
   top: 0;
   left: 0;
   height: 4px;
   width: 100%;
-  background: rgba(0,0,0,0.15);
+  background: rgba(0, 0, 0, 0.15);
   border-radius: 10px;
 }
 
@@ -1648,7 +1812,7 @@ textarea::placeholder {
   background: #ecaf63ff;
   border-radius: 10px;
 }
-  
+
 .timeline_bar span {
   font-size: 1.3rem;
   color: #8e8984;
@@ -1656,43 +1820,116 @@ textarea::placeholder {
   margin-right: 20px;
   position: relative;
 }
-  
+
 .timeline_bar span.active {
-   color: #ecaf63ff;
+  color: #ecaf63ff;
   font-weight: bold;
 }
 
 @media (max-width: 1024px) {
-
-    .year_section h1 {
-        font-size: 8rem;  
-    }
-
+  .year_section h1 {
+    font-size: 8rem;
+  }
 }
 
 @media (max-width: 425px) {
+  .year_section h1 {
+    font-size: 5rem;
+  }
 
-    .year_section h1 {
-        font-size: 5rem;  
-    }
+  .float_img {
+    display: none;
+  }
 
-    .float_img {
-      display: none;
-    }
-
-    .timeline_bar span {
-      font-size: 1.1rem;
-    }
-
+  .timeline_bar span {
+    font-size: 1.1rem;
+  }
 }
 
+footer {
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
+    url("../src/assets/post-17.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0px;
+}
 
+.footer h1 {
+  font-family: "Allura", cursive;
+  color: #fff;
+  font-size: 6rem;
+  font-weight: 500;
+  line-height: 3.5rem;
+}
+.footer h3 {
+  font-family: "Caviar Dreams", "Poppins", sans-serif;
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
 
+.footer_links {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 40px;
+  padding: 20px;
+  border-bottom: 1px solid #b1b1b12d;
+  gap: 20px;
+}
 
+.footer_links h4 {
+  font-family: "Caviar Dreams", "Poppins", sans-serif;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  margin-bottom: 20px;
+}
 
+.follow_us {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
+.follow_us a {
+  font-family: "Caviar Dreams", "Poppins", sans-serif;
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  font-weight: 500;
+  text-decoration: none;
+}
 
+.footer p {
+  font-family: "Caviar Dreams", "Poppins", sans-serif;
+  color: #fff;
+  font-size: 16px;
+  line-height: 2rem;
+  font-weight: 500;
+  text-align: left;
+}
 
+.contact,
+.Hours,
+.follow_us {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
 
-
-
+.Hours {
+}

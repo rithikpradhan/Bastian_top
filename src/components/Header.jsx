@@ -35,7 +35,10 @@ const Header = ({ onBookClick }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  console.log("showNav:", showNav);
+
   return (
+    
     <nav className="navbar">
       <div className="logo">
         <img src={logo} alt="Bastian Logo" />

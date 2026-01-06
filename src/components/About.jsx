@@ -52,16 +52,12 @@ const About = ({ branch }) => {
 
     const tl = gsap.timeline();
     tl.to(mainImage, {
-      opacity: 0,
-      x: -40,
-      scale: 0.95,
       duration: 0.4,
       ease: "power2.inOut",
     })
       .add(() => (mainImage.src = newImage))
       .to(mainImage, {
         opacity: 1,
-        x: 0,
         scale: 1,
         duration: 0.6,
         ease: "power3.out",
@@ -95,73 +91,78 @@ const About = ({ branch }) => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ amount: 0.4 }}
       >
-        <div className="about_us_picture">
-          {/* Main Image */}
-          <div className="image-container">
-            <img
-              ref={mainImgRef}
-              src={images[index]}
-              alt="Main"
-              className="main_img"
-            />
-
-            {/* Shine layer */}
-            <div className="image-shine"></div>
-          </div>
-
-          {/* Sub Images */}
-          <div className="image-sub-container" ref={containerRef}>
-            {subImages.map((img, i) => (
+        <div className="container-abt">
+          <div className="about_us_picture">
+            {/* Main Image */}
+            <div className="image-container">
               <img
-                key={i}
-                src={img}
-                className="thumb"
-                onClick={() => {
-                  setIndex(i);
-                  Image(img);
-                }}
-                style={{
-                  cursor: "pointer",
-                  opacity: i === index ? 0.7 : 1,
-                }}
+                ref={mainImgRef}
+                src={images[index]}
+                alt="Main"
+                className="main_img"
               />
-            ))}
+
+              {/* Shine layer */}
+              <div className="image-shine"></div>
+            </div>
+
+            {/* Sub Images */}
+            <div className="image-sub-container" ref={containerRef}>
+              {subImages.map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  className="thumb"
+                  onClick={() => {
+                    setIndex(i);
+                    Image(img);
+                  }}
+                  style={{
+                    cursor: "pointer",
+                    opacity: i === index ? 0.7 : 1,
+                  }}
+                />
+              ))}
+            </div>
+
+            <div className="slide-btn-grp">
+              <button className="slide-btn left" onClick={() => scroll("left")}>
+                &#10094;
+              </button>
+              <button
+                className="slide-btn right"
+                onClick={() => scroll("right")}
+              >
+                &#10095;
+              </button>
+            </div>
           </div>
 
-          <div className="slide-btn-grp">
-            <button className="slide-btn left" onClick={() => scroll("left")}>
-              &#10094;
-            </button>
-            <button className="slide-btn right" onClick={() => scroll("right")}>
-              &#10095;
+          {/* Text Section */}
+          <div className="about_us_des">
+            <h3>About Us</h3>
+            <h1>Bastian at the Top</h1>
+
+            <p>
+              Opened in 2023 in Mumbai, Bastian At The Top redefines indulgence,
+              offering an elevated dining experience you never knew you needed.
+              This incredible luxury dining destination in Dadar, offers a first
+              of its kind experience to the locals — with an unparalleled
+              skyline view, unmatched ambience & an F&B experience like no
+              other.
+            </p>
+
+            <p>
+              Perched on the 48th floor of Kohinoor Square in Dadar, Bastian At
+              The Top features a stunning rooftop dining area with breathtaking
+              city views and a serene swimming pool.
+            </p>
+            <button className="read_more_btn">
+              <Link to="/ourstory" className="link">
+                Read More
+              </Link>
             </button>
           </div>
-        </div>
-
-        {/* Text Section */}
-        <div className="about_us_des">
-          <h3>About Us</h3>
-          <h1>Bastian at the Top</h1>
-
-          <p>
-            Opened in 2023 in Mumbai, Bastian At The Top redefines indulgence,
-            offering an elevated dining experience you never knew you needed.
-            This incredible luxury dining destination in Dadar, offers a first
-            of its kind experience to the locals — with an unparalleled skyline
-            view, unmatched ambience & an F&B experience like no other.
-          </p>
-
-          <p>
-            Perched on the 48th floor of Kohinoor Square in Dadar, Bastian At
-            The Top features a stunning rooftop dining area with breathtaking
-            city views and a serene swimming pool.
-          </p>
-
-          <button className="read_more_btn">
-            <Link to="/ourstory" className="link">
-              Read More
-            </Link>
-          </button>
         </div>
       </motion.section>
     );
@@ -198,6 +199,7 @@ const About = ({ branch }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5, duration: 0.7 }}
                 viewport={{ once: true }}
+                className=" "
               >
                 Bastian Garden City{" "}
               </motion.h2>

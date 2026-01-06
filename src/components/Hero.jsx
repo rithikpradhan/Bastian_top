@@ -1,5 +1,10 @@
 import React, { useRef, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  AnimatePresence,
+} from "framer-motion";
 import Header from "./Header.jsx";
 import Booking from "./Booking.jsx";
 
@@ -46,114 +51,150 @@ const Hero = ({ branch, setBranch }) => {
   };
 
   const current = branchData[branch];
+  const textVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.12 },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+  };
 
   return (
     <motion.section
       ref={heroRef}
       className="hero"
       style={{
-        backgroundImage: `url(${current.bgImage})`,
+        // backgroundImage: `url(${current.bgImage})`,
         y: bgY,
       }}
     >
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={current.bgImage}
+          src={current.bgImage}
+          width="1920"
+          height="1080"
+          alt="Bastian Restaurant"
+          className="hero-bg"
+          loading="eager"
+          fetchpriority="high"
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 1.02 }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+        />
+      </AnimatePresence>
+
       <div className="hero-overlay">
         <Header onBookClick={() => setIsOpen(true)} />
         <Booking isOpen={isOpen} onClose={() => setIsOpen(false)} />
 
         {/* TEXT */}
-        <motion.div
-          className="hero-content"
-          style={{
-            y: textY, // your scroll based animation
-          }}
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 1.2,
-            ease: [0.25, 0.1, 0.25, 1],
-          }}
-        >
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-          >
-            {current.title}
-          </motion.h1>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35, duration: 0.8 }}
-          >
-            {current.subtitle}
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            {current.desc}
-          </motion.p>
-
+        <AnimatePresence mode="wait">
           <motion.div
-            className="hero-buttons"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
+            key={branch}
+            className="hero-content"
+            variants={textVariants}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            transition={{ duration: 0.6, ease: "easeInOut" }}
           >
-            <p>Visit Our Restaurant's</p>
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              variants={item}
+            >
+              {current.title}
+            </motion.h1>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35, duration: 0.8 }}
+              variants={item}
+            >
+              {current.subtitle}
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              variants={item}
+            >
+              {current.desc}
+            </motion.p>
 
             <motion.div
-              className="hero-btn"
-              initial="hidden"
-              animate="show"
-              variants={{
-                hidden: { opacity: 0 },
-                show: {
-                  opacity: 1,
-                  transition: {
-                    staggerChildren: 0.15,
-                  },
-                },
-              }}
+              className="hero-buttons"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
             >
-              <motion.button
-                className={`branch-btn ${branch === "garden" ? "active" : ""}`}
-                onClick={() => setBranch("garden")}
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  show: { opacity: 1, y: 0 },
-                }}
-              >
-                Bastian Garden City
-              </motion.button>
+              <p>Visit Our Restaurant's</p>
 
-              <motion.button
-                className={`branch-btn ${branch === "empire" ? "active" : ""}`}
-                onClick={() => setBranch("empire")}
+              <motion.div
+                className="hero-btn"
+                initial="hidden"
+                animate="show"
                 variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  show: { opacity: 1, y: 0 },
+                  hidden: { opacity: 0 },
+                  show: {
+                    opacity: 1,
+                    transition: {
+                      staggerChildren: 0.15,
+                    },
+                  },
                 }}
               >
-                Bastian Empire
-              </motion.button>
+                <motion.button
+                  className={`branch-btn ${
+                    branch === "garden" ? "active" : ""
+                  }`}
+                  onClick={() => setBranch("garden")}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    show: { opacity: 1, y: 0 },
+                  }}
+                >
+                  Bastian Garden City
+                </motion.button>
 
-              <motion.button
-                className={`branch-btn ${branch === "main" ? "active" : ""}`}
-                onClick={() => setBranch("main")}
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  show: { opacity: 1, y: 0 },
-                }}
-              >
-                Bastian at the Top
-              </motion.button>
+                <motion.button
+                  className={`branch-btn ${
+                    branch === "empire" ? "active" : ""
+                  }`}
+                  onClick={() => setBranch("empire")}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    show: { opacity: 1, y: 0 },
+                  }}
+                >
+                  Bastian Empire
+                </motion.button>
+
+                <motion.button
+                  className={`branch-btn ${branch === "main" ? "active" : ""}`}
+                  onClick={() => setBranch("main")}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    show: { opacity: 1, y: 0 },
+                  }}
+                >
+                  Bastian at the Top
+                </motion.button>
+              </motion.div>
             </motion.div>
           </motion.div>
-        </motion.div>
+        </AnimatePresence>
       </div>
     </motion.section>
   );

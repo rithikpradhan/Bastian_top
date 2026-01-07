@@ -274,7 +274,7 @@ main {
   justify-content: center;
   gap: 60px;
   width: 100%;
-  padding: 120px 20px;
+  padding: 100px 20px;
   flex-wrap: wrap;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
     url("../src/assets/post-4.webp");
@@ -286,13 +286,15 @@ main {
 .container-abt {
   max-width: 100%;
   width: 90%;
-  display: flex;
   justify-content: space-between;
 }
 
 .about_us_picture {
   flex: 1;
-  /* height: 550px; */
+  max-width: 750px;
+  width: 100%;
+  height: 550px;
+  /* background: red; */
   position: relative;
   display: flex;
   align-items: center;
@@ -301,9 +303,10 @@ main {
 
 .image-container {
   position: absolute;
-  bottom: 0;
-  left: -15px;
-  width: 450px;
+  bottom: -25px;
+  left: 20px;
+  max-width: 550px;
+  width: 90%;
   height: 350px;
   scale: 0.8;
   z-index: 1;
@@ -311,10 +314,10 @@ main {
 
 .image-sub-container {
   position: absolute;
-  top: -10px;
-  right: 5%;
+  top: 0;
+  right: 0;
   max-width: 450px;
-  width: 100%;
+  width: 90%;
   height: 60%;
   border-radius: 15px;
   display: flex;
@@ -522,6 +525,12 @@ main {
   .about_us_des {
     flex: 1;
   }
+  .container-abt {
+    max-width: 100%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 @media (max-width: 425px) {
@@ -543,12 +552,13 @@ main {
   }
 
   .image-container {
+    bottom: -100px;
     width: 250px;
     height: 250px;
   }
 
   .image-sub-container {
-    width: 400px;
+    width: 350px;
     height: 350px;
   }
   .slide-btn {

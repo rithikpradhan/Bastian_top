@@ -69,7 +69,6 @@ const Hero = ({ branch, setBranch }) => {
       ref={heroRef}
       className="hero"
       style={{
-        // backgroundImage: `url(${current.bgImage})`,
         y: bgY,
       }}
     >

@@ -20,7 +20,13 @@ const Gallery = ({ branch }) => {
   if (branch === "main") {
     return (
       <section className="gallery">
-        <div className="gallery-content">
+        <motion.div
+          className="gallery-content"
+          initial={{ opacity: 0, y: 120 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ amount: 0.2 }}
+        >
           <h2>Dine with the view?</h2>
           <span>
             Perched on the 48th floor of Kohinoor Square in Dadar, Bastian At
@@ -58,7 +64,7 @@ const Gallery = ({ branch }) => {
               <img src={img4} alt="" />
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
     );
   }
@@ -124,6 +130,7 @@ const Gallery = ({ branch }) => {
               desires in an unforgettable setting.
             </motion.p>
             <motion.a
+              className="explore_menu"
               href=""
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -146,24 +153,26 @@ const Gallery = ({ branch }) => {
         <div className="overlay"></div>
 
         <div className="content">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            Sip Club Best Bar — Nightlife
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            Known for its impeccable bar program, our mixologists surpass
-            expectations, setting a new standard in cocktail craft, as the city
-            knows it.
-          </motion.p>
+          <div className="content_text">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.7 }}
+              viewport={{ once: true }}
+            >
+              Sip Club Best Bar — Nightlife
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.7 }}
+              viewport={{ once: true }}
+            >
+              Known for its impeccable bar program, our mixologists surpass
+              expectations, setting a new standard in cocktail craft, as the
+              city knows it.
+            </motion.p>
+          </div>
         </div>
       </section>
     );

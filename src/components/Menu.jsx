@@ -20,7 +20,7 @@ import imgL from "../assets/post-14.jpg";
 import video1 from "../assets/video_6.mp4";
 import video2 from "../assets/video_7.mp4";
 import video3 from "../assets/video_8.mp4";
-import { motion, AnimatePresence, delay } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 const MenuSection = ({ branch }) => {
   const sectionRef = useRef(null);
   const cardsRef = useRef(null);
@@ -37,25 +37,68 @@ const MenuSection = ({ branch }) => {
     return () => clearTimeout(timer);
   }, [index]);
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+      },
+    },
+  };
+
+  const imageVariants = {
+    hidden: {
+      opacity: 0,
+      y: 40,
+      scale: 0.95,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1], // premium easing
+      },
+    },
+  };
+
   if (branch === "main") {
     return (
       <section id="menu" className="menu" ref={sectionRef}>
-        <div
+        <motion.div
           className="banner_img"
           style={{ backgroundImage: `url(${menuBg})` }}
-        ></div>
+          initial={{ opacity: 0, scale: 0.6 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ amount: 0.4 }}
+        ></motion.div>
 
         <div className="menu_section">
-          <div className="heading">
+          <motion.div
+            className="heading"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ amount: 0.4 }}
+            delay={100}
+          >
             <p>Our Menu</p>
             <h1>Explore Bastian</h1>
             <a href="#">
               Bastian at the top{" "}
               <img src={arrow} alt="" style={{ width: 16 }} />
             </a>
-          </div>
+          </motion.div>
 
-          <div className="menu_para">
+          <motion.div
+            className="menu_para"
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+            viewport={{ amount: 0.4 }}
+          >
             <p>
               Bastian At The Top presents an unparalleled fusion of bold,
               captivating interiors and breathtaking 360-degree vistas,
@@ -73,32 +116,34 @@ const MenuSection = ({ branch }) => {
                 <img src={service} alt="" /> Luxurious Atmosphere
               </span>
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="menu_cards" ref={cardsRef}>
-          <img src={imgA} alt="" className="image_class-2" />
-          <img src={imgB} alt="" className="image_class-1" />
-          <img src={imgC} alt="" className="image_class-2" />
-          <img src={imgD} alt="" className="image_class-1" />
-          <img src={imgE} alt="" className="image_class-2" />
-          <img src={imgF} alt="" className="image_class-1" />
-          <img src={imgG} alt="" className="image_class-2" />
-        </div>
+        <motion.div className="menu_cards">
+          {[imgA, imgB, imgC, imgD, imgE, imgF, imgG].map((img, i) => (
+            <motion.img
+              key={i}
+              src={img}
+              alt=""
+              className={i % 2 === 0 ? "image_class-2" : "image_class-1"}
+              initial={{ opacity: 0, y: 40, filter: "blur(6px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{
+                duration: 1.5,
+                delay: i * 0.1,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              viewport={{ once: true }}
+            />
+          ))}
+        </motion.div>
       </section>
     );
   }
 
   if (branch === "garden") {
     return (
-      <motion.section
-        initial={{ opacity: 0, y: 120 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ amount: 0.4 }}
-        id="menu"
-        className="garden_menu"
-      >
+      <section id="menu" className="garden_menu">
         <video src={video1} autoPlay loop muted className="bg-video"></video>
         <video src={video2} autoPlay loop muted className="bg-video"></video>
         <video src={video3} autoPlay loop muted className="bg-video"></video>
@@ -124,7 +169,7 @@ const MenuSection = ({ branch }) => {
             photos
           </motion.p>
         </div>
-      </motion.section>
+      </section>
     );
   }
 
@@ -159,9 +204,17 @@ const MenuSection = ({ branch }) => {
               transition={{ delay: 0.2, duration: 0.7 }}
               viewport={{ once: true }}
             >
-              Step into the heart of luxury dining at Bastian Empire — elegant
-              ambience, unforgettable taste. Locally sourced, artistically
-              crafted, & exquisitely delightful authentic food.
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem,
+              provident recusandae praesentium magnam quidem, ab ipsa nulla
+              officia iure placeat libero dolore, maxime maiores? Ipsam earum
+              est repellendus obcaecati minus? Lorem ipsum, dolor sit amet
+              consectetur adipisicing elit. Sequi officia ullam accusantium,
+              nihil voluptates rerum impedit hic non quasi vel totam ducimus,
+              maiores velit maxime dolorum dicta unde. Placeat, nostrum? Lorem
+              ipsum dolor sit amet consectetur adipisicing elit. Aperiam officia
+              odit vitae voluptatibus iste commodi possimus necessitatibus
+              doloribus labore quod recusandae quam mollitia, soluta tempore,
+              earum blanditiis, accusamus perferendis. Animi!
             </motion.p>
 
             <motion.button
@@ -189,10 +242,10 @@ const MenuSection = ({ branch }) => {
                   key={index}
                   src={images[index]}
                   className="slider_img"
-                  initial={{ opacity: 0, scale: 0.6, x: 100 }}
+                  initial={{ opacity: 0, scale: 0.3, x: 250 }}
                   animate={{ opacity: 1, scale: 1, x: 0 }}
-                  exit={{ opacity: 0, scale: 0.7, x: -100 }}
-                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                  exit={{ opacity: 0, scale: 0.2, x: -500 }}
+                  transition={{ duration: 0.7, ease: "easeInOut" }}
                 />
               </AnimatePresence>
             </div>

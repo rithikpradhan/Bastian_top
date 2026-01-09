@@ -50,7 +50,8 @@ const BookingPopup = ({ isOpen, onClose }) => {
           <button type="submit" className="submit_btn">
             Confirm Booking
           </button>
-
+        </form>
+        <div className="terms">
           <h1>Restaurant Terms & Conditions</h1>
           <li>
             <b>Dress Code:</b> Smart Casual. Men, please note regrettably no
@@ -60,7 +61,7 @@ const BookingPopup = ({ isOpen, onClose }) => {
             <b>Details:</b> Deposit/Cover Charge is not required for the
             children below 15 years of age.
           </li>
-        </form>
+        </div>
       </div>
 
       <button className="close_btn" onClick={onClose}>

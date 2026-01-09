@@ -20,7 +20,7 @@ import food7 from "../assets/food-7.webp";
 import food8 from "../assets/food-8.webp";
 import food9 from "../assets/food-9.webp";
 import video1 from "../assets/garden_video.mp4";
-import { motion } from "framer-motion";
+import { AnimatePresence, delay, motion } from "framer-motion";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -83,18 +83,17 @@ const About = ({ branch }) => {
 
   if (branch === "main") {
     return (
-      <motion.section
-        id="about"
-        className="about_us"
-        initial={{ opacity: 0, y: 120 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ amount: 0.4 }}
-      >
-        <div className="container-abt">
+      <section id="about" className="about_us">
+        <div className="container-abt ">
           <div className="about_us_picture">
             {/* Main Image */}
-            <div className="image-container">
+            <motion.div
+              className="image-container"
+              initial={{ opacity: 0, scale: 0.6 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ amount: 0.4 }}
+            >
               <img
                 ref={mainImgRef}
                 src={images[index]}
@@ -104,10 +103,17 @@ const About = ({ branch }) => {
 
               {/* Shine layer */}
               <div className="image-shine"></div>
-            </div>
+            </motion.div>
 
             {/* Sub Images */}
-            <div className="image-sub-container" ref={containerRef}>
+            <motion.div
+              className="image-sub-container"
+              ref={containerRef}
+              initial={{ opacity: 0, scale: 0.6 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+              viewport={{ amount: 0.4 }}
+            >
               {subImages.map((img, i) => (
                 <img
                   key={i}
@@ -123,7 +129,7 @@ const About = ({ branch }) => {
                   }}
                 />
               ))}
-            </div>
+            </motion.div>
 
             <div className="slide-btn-grp">
               <button className="slide-btn left" onClick={() => scroll("left")}>
@@ -139,7 +145,13 @@ const About = ({ branch }) => {
           </div>
 
           {/* Text Section */}
-          <div className="about_us_des">
+          <motion.div
+            className="about_us_des"
+            initial={{ opacity: 0, y: 120 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ amount: 0.4 }}
+          >
             <h3>About Us</h3>
             <h1>Bastian at the Top</h1>
 
@@ -162,21 +174,15 @@ const About = ({ branch }) => {
                 Read More
               </Link>
             </button>
-          </div>
+          </motion.div>
         </div>
-      </motion.section>
+      </section>
     );
   }
 
   if (branch === "garden") {
     return (
-      <motion.section
-        className="about-garden"
-        initial={{ opacity: 0, y: 120 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ amount: 0.4 }}
-      >
+      <section className="about-garden">
         <div className="garden-section">
           <div className="garden_container">
             <div className="container-1">
@@ -195,11 +201,11 @@ const About = ({ branch }) => {
 
             <div className="container-2">
               <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.7 }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.7, duration: 0.7 }}
                 viewport={{ once: true }}
-                className=" "
+                className=""
               >
                 Bastian Garden City{" "}
               </motion.h2>
@@ -231,19 +237,13 @@ const About = ({ branch }) => {
             </div>
           </div>
         </div>
-      </motion.section>
+      </section>
     );
   }
 
   if (branch === "empire") {
     return (
-      <motion.section
-        className="indulgence"
-        initial={{ opacity: 0, y: 120 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ amount: 0.4 }}
-      >
+      <section className="indulgence">
         <div className="indulgence_about">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -292,7 +292,7 @@ const About = ({ branch }) => {
             Read More
           </motion.button>
         </div>
-      </motion.section>
+      </section>
     );
   }
 };

@@ -52,7 +52,7 @@ const Header = ({ onBookClick }) => {
             <Link to="/ourstory">Our Story</Link>
           </li>
           <li>
-            <Link to="/thebuzz">The Buzz</Link>{" "}
+            <Link to="/thebuzz">The Buzz</Link>
           </li>
           <li>
             <a href="#contact">Careers</a>
@@ -78,7 +78,7 @@ const Header = ({ onBookClick }) => {
             <Link to="/ourstory">Our Story</Link>
           </li>
           <li>
-            <a href="#essence">The Buzz</a>
+            <Link to="/thebuzz">The Buzz</Link>
           </li>
           <li>
             <a href="#contact">Careers</a>

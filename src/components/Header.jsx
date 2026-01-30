@@ -38,7 +38,6 @@ const Header = ({ onBookClick }) => {
   console.log("showNav:", showNav);
 
   return (
-    
     <nav className="navbar">
       <div className="logo">
         <img src={logo} alt="Bastian Logo" />
@@ -53,7 +52,7 @@ const Header = ({ onBookClick }) => {
             <Link to="/ourstory">Our Story</Link>
           </li>
           <li>
-            <a href="#essence">The Buzz</a>
+            <Link to="/thebuzz">The Buzz</Link>{" "}
           </li>
           <li>
             <a href="#contact">Careers</a>

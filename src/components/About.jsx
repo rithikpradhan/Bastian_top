@@ -1,15 +1,5 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-
-import img1 from "../assets/asset 4.webp";
-import img2 from "../assets/asset 5.webp";
-import img3 from "../assets/asset 6.webp";
-import img4 from "../assets/asset 2.webp";
-import img5 from "../assets/asset 13.webp";
-import img6 from "../assets/asset 10.webp";
-import img7 from "../assets/bastian-top-2.webp";
-import img8 from "../assets/asset 11.webp";
-
 import food1 from "../assets/food-1.webp";
 import food2 from "../assets/food-2.webp";
 import food3 from "../assets/food-3.webp";
@@ -20,19 +10,14 @@ import food7 from "../assets/food-7.webp";
 import food8 from "../assets/food-8.webp";
 import food9 from "../assets/food-9.webp";
 import video1 from "../assets/garden_video.mp4";
-import { AnimatePresence, delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import SplitType from "split-type";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const About = ({ branch }) => {
   const containerRef = useRef(null);
   const mainImgRef = useRef(null);
 
-  const images = [img1, img2, img3, img4, img5, img6, img7, img8];
   const subImages = [
     food1,
     food2,
@@ -47,33 +32,36 @@ const About = ({ branch }) => {
 
   const [index, setIndex] = useState(0);
 
-  const Image = (newImage) => {
+  const changeImage = (newImage, newIndex) => {
     const mainImage = mainImgRef.current;
 
     const tl = gsap.timeline();
     tl.to(mainImage, {
-      duration: 0.4,
+      opacity: 0.6,
+      scale: 0.95,
+      duration: 0.3,
       ease: "power2.inOut",
     })
       .add(() => (mainImage.src = newImage))
       .to(mainImage, {
         opacity: 1,
         scale: 1,
-        duration: 0.6,
-        ease: "power3.out",
+        duration: 0.4,
+        ease: "power2.out",
       });
+
+    setIndex(newIndex);
   };
 
   const scroll = (direction) => {
     let newIndex = direction === "left" ? index - 1 : index + 1;
-    if (newIndex < 0) newIndex = images.length - 1;
-    if (newIndex >= images.length) newIndex = 0;
+    if (newIndex < 0) newIndex = subImages.length - 1;
+    if (newIndex >= subImages.length) newIndex = 0;
 
-    setIndex(newIndex);
-    Image(images[newIndex]);
+    changeImage(subImages[newIndex], newIndex);
 
     const container = containerRef.current;
-    const scrollAmount = container.offsetWidth;
+    const scrollAmount = 300;
 
     container.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
@@ -83,97 +71,115 @@ const About = ({ branch }) => {
 
   if (branch === "main") {
     return (
-      <section id="about" className="about_us">
-        <div className="container-abt ">
-          <div className="about_us_picture">
+      <section id="about" className="about-redesign">
+        <div className="about-container">
+          {/* Gallery Section - Right */}
+          <motion.div
+            className="about-gallery"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <div className="about-badge">About Us</div>
+            <h1 className="about-title">Bastian at the Top</h1>
             {/* Main Image */}
-            <motion.div
-              className="image-container"
-              initial={{ opacity: 0, scale: 0.6 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ amount: 0.4 }}
-            >
+            <div className="gallery-main">
               <img
                 ref={mainImgRef}
-                src={images[index]}
-                alt="Main"
-                className="main_img"
+                src={subImages[index]}
+                alt="Bastian dining"
+                className="main-image"
               />
+              <div className="image-overlay"></div>
+            </div>
 
-              {/* Shine layer */}
-              <div className="image-shine"></div>
-            </motion.div>
-
-            {/* Sub Images */}
-            <motion.div
-              className="image-sub-container"
-              ref={containerRef}
-              initial={{ opacity: 0, scale: 0.6 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-              viewport={{ amount: 0.4 }}
-            >
-              {subImages.map((img, i) => (
-                <img
-                  key={i}
-                  src={img}
-                  className="thumb"
-                  onClick={() => {
-                    setIndex(i);
-                    Image(img);
-                  }}
-                  style={{
-                    cursor: "pointer",
-                    opacity: i === index ? 0.7 : 1,
-                  }}
-                />
-              ))}
-            </motion.div>
-
-            <div className="slide-btn-grp">
-              <button className="slide-btn left" onClick={() => scroll("left")}>
-                &#10094;
-              </button>
+            {/* Thumbnails */}
+            <div className="gallery-thumbnails-wrapper">
               <button
-                className="slide-btn right"
-                onClick={() => scroll("right")}
+                className="gallery-nav gallery-nav-left"
+                onClick={() => scroll("left")}
+                aria-label="Previous image"
               >
-                &#10095;
+                ‹
+              </button>
+
+              <div className="gallery-thumbnails" ref={containerRef}>
+                {subImages.map((img, i) => (
+                  <div
+                    key={i}
+                    className={`thumbnail ${i === index ? "active" : ""}`}
+                    onClick={() => changeImage(img, i)}
+                  >
+                    <img src={img} alt={`Gallery ${i + 1}`} />
+                    <div className="thumbnail-overlay"></div>
+                  </div>
+                ))}
+              </div>
+
+              <button
+                className="gallery-nav gallery-nav-right"
+                onClick={() => scroll("right")}
+                aria-label="Next image"
+              >
+                ›
               </button>
             </div>
-          </div>
-
-          {/* Text Section */}
+          </motion.div>
+          {/* Text Section - Left */}
           <motion.div
-            className="about_us_des"
-            initial={{ opacity: 0, y: 120 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ amount: 0.4 }}
+            className="about-content"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
           >
-            <h3>About Us</h3>
-            <h1>Bastian at the Top</h1>
+            <div className="about_txt_content">
+              <p className="about-text">
+                Opened in 2023 in Mumbai, Bastian At The Top redefines
+                indulgence, offering an elevated dining experience you never
+                knew you needed. This incredible luxury dining destination in
+                Dadar offers a first of its kind experience to the locals — with
+                an unparalleled skyline view, unmatched ambience & an F&B
+                experience like no other.
+              </p>
 
-            <p>
-              Opened in 2023 in Mumbai, Bastian At The Top redefines indulgence,
-              offering an elevated dining experience you never knew you needed.
-              This incredible luxury dining destination in Dadar, offers a first
-              of its kind experience to the locals — with an unparalleled
-              skyline view, unmatched ambience & an F&B experience like no
-              other.
-            </p>
+              <p className="about-text">
+                Perched on the 48th floor of Kohinoor Square in Dadar, Bastian
+                At The Top features a stunning rooftop dining area with
+                breathtaking city views and a serene swimming pool.
+              </p>
+            </div>
 
-            <p>
-              Perched on the 48th floor of Kohinoor Square in Dadar, Bastian At
-              The Top features a stunning rooftop dining area with breathtaking
-              city views and a serene swimming pool.
-            </p>
-            <button className="read_more_btn">
-              <Link to="/ourstory" className="link">
-                Read More
-              </Link>
-            </button>
+            <div className="about-stats">
+              <div className="stat-item">
+                <span className="stat-number">48th</span>
+                <span className="stat-label">Floor</span>
+              </div>
+              <div className="stat-divider"></div>
+              <div className="stat-item">
+                <span className="stat-number">360°</span>
+                <span className="stat-label">Views</span>
+              </div>
+              <div className="stat-divider"></div>
+              <div className="stat-item">
+                <span className="stat-number">2023</span>
+                <span className="stat-label">Opened</span>
+              </div>
+            </div>
+
+            <Link to="/ourstory" className="about-cta">
+              <span>Discover Our Story</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M5 12h14m-7-7l7 7-7 7"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -182,60 +188,56 @@ const About = ({ branch }) => {
 
   if (branch === "garden") {
     return (
-      <section className="about-garden">
-        <div className="garden-section">
-          <div className="garden_container">
-            <div className="container-1">
-              <motion.video
-                initial={{ opacity: 0, scale: 0.6, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ delay: 0.9, duration: 1 }}
-                viewport={{ once: true }}
-                src={video1}
-                autoPlay
-                loop
-                muted
-              ></motion.video>
-            </div>
+      <section className="about-garden-redesign">
+        <div className="garden-grid">
+          {/* Video Section */}
+          <motion.div
+            className="garden-media"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <video src={video1} autoPlay loop muted playsInline></video>
+            <div className="media-overlay"></div>
+          </motion.div>
 
-            <div className="container-2">
-              <motion.h2
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.7, duration: 0.7 }}
-                viewport={{ once: true }}
-                className=""
-              >
-                Bastian Garden City{" "}
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.7 }}
-                viewport={{ once: true }}
-              >
-                You’ve just entered Bastian Garden City — where every corner
-                tells a story, and every detail is designed to dazzle. From the
-                plush interiors to the ambient lighting, this is more than a
-                dining experience; it’s a journey into luxury. 🌿🍽️ Set in a
-                stunning space with décor inspired by chic holiday destinations
-                across the world, Bastian Garden City is designed to impress.
-                The al fresco sets the mood for an unforgettable night out,
-                making it one of the best restaurants in Bangalore for romantic
-                evenings, celebrations, and everything in between.
-              </motion.p>
-              <motion.button
-                className="bookbtn"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.7 }}
-                viewport={{ once: true }}
-              >
-                Read More
-              </motion.button>
-            </div>
-          </div>
+          {/* Content Section */}
+          <motion.div
+            className="garden-content"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <div className="garden-badge">Bengaluru</div>
+            <h2 className="garden-title">Bastian Garden City</h2>
+            <p className="garden-text">
+              You've just entered Bastian Garden City — where every corner tells
+              a story, and every detail is designed to dazzle. From the plush
+              interiors to the ambient lighting, this is more than a dining
+              experience; it's a journey into luxury. 🌿🍽️
+            </p>
+            <p className="garden-text">
+              Set in a stunning space with décor inspired by chic holiday
+              destinations across the world, Bastian Garden City is designed to
+              impress. The al fresco sets the mood for an unforgettable night
+              out, making it one of the best restaurants in Bangalore for
+              romantic evenings, celebrations, and everything in between.
+            </p>
+            <button className="garden-cta">
+              Explore More
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M5 12h14m-7-7l7 7-7 7"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </motion.div>
         </div>
       </section>
     );
@@ -243,55 +245,53 @@ const About = ({ branch }) => {
 
   if (branch === "empire") {
     return (
-      <section className="indulgence">
-        <div className="indulgence_about">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            Bastian Empire
-          </motion.h1>
+      <section className="about-empire-redesign">
+        <motion.div
+          className="empire-content"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <div className="empire-badge">Pune</div>
+          <h1 className="empire-title">Bastian Empire</h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            Our latest launch in Pune, Bastian Empire depicts the inimitable
-            blend of everything that the Bastian brand is known for: bold,
-            striking interiors, glorious F&B offerings, and a distinctive vibe
-            that feels exciting yet comfortable at the same time.Located in a
-            high-rise, our 220-seater venue is one of Pune’s best restaurants,
-            taking inspiration from contemporary caves, boasting a
-            Cappadocia-inspired entrance, rustic cobblestone flooring, and a
-            wabi-sabi aesthetic that seamlessly blends polished and raw elements
-            for a truly global aesthetic and experience.
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            The interiors create a chic yet relaxed vibe—perfect for
-            Instagram-worthy moments. Unparalleled nightlife elevates the energy
-            of the space which seamlessly blend party, perfectly crafted
-            cocktails and dining vibes for a great, world-class experience.
-          </motion.p>
+          <div className="empire-text-grid">
+            <p>
+              Our latest launch in Pune, Bastian Empire depicts the inimitable
+              blend of everything that the Bastian brand is known for: bold,
+              striking interiors, glorious F&B offerings, and a distinctive vibe
+              that feels exciting yet comfortable at the same time.
+            </p>
+            <p>
+              Located in a high-rise, our 220-seater venue is one of Pune's best
+              restaurants, taking inspiration from contemporary caves, boasting
+              a Cappadocia-inspired entrance, rustic cobblestone flooring, and a
+              wabi-sabi aesthetic that seamlessly blends polished and raw
+              elements for a truly global aesthetic and experience.
+            </p>
+            <p>
+              The interiors create a chic yet relaxed vibe—perfect for
+              Instagram-worthy moments. Unparalleled nightlife elevates the
+              energy of the space which seamlessly blend party, perfectly
+              crafted cocktails and dining vibes for a great, world-class
+              experience.
+            </p>
+          </div>
 
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.7 }}
-            viewport={{ once: true }}
-            className="read_more_btn"
-          >
-            Read More
-          </motion.button>
-        </div>
+          <button className="empire-cta">
+            Learn More
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M5 12h14m-7-7l7 7-7 7"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </motion.div>
       </section>
     );
   }
